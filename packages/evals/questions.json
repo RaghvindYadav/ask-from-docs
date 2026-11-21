@@ -1,0 +1,47 @@
+[
+  {
+    "id": "q01",
+    "type": "simple",
+    "question": "How do I add metadata like the page title to a page in the App Router?",
+    "version": "v15",
+    "expected_url": "TODO: fill in after checking the docs",
+    "expected_answer": "TODO",
+    "should_abstain": false
+  },
+  {
+    "id": "q02",
+    "type": "exact_api",
+    "question": "What does revalidatePath do?",
+    "version": "v15",
+    "expected_url": "TODO",
+    "expected_answer": "TODO",
+    "should_abstain": false
+  },
+  {
+    "id": "q03",
+    "type": "version_specific",
+    "question": "Is params async in a page component?",
+    "version": "v15",
+    "expected_url": "TODO",
+    "expected_answer": "TODO",
+    "should_abstain": false
+  },
+  {
+    "id": "q04",
+    "type": "vague",
+    "question": "my page keeps showing old data after deploy",
+    "version": "v14",
+    "expected_url": "TODO",
+    "expected_answer": "TODO",
+    "should_abstain": false
+  },
+  {
+    "id": "q05",
+    "type": "out_of_scope",
+    "question": "How do I deploy Next.js to a Raspberry Pi cluster with Kubernetes?",
+    "version": "v15",
+    "expected_url": null,
+    "expected_answer": null,
+    "should_abstain": true
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "name": "@askdocs/ingest",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "test": "tsx --test src/*.test.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^1.0.0",
+    "ai": "^4.0.0",
+    "dotenv": "^16.4.5",
+    "glob": "^11.0.0",
+    "postgres": "^3.4.4"
+  }
+}
