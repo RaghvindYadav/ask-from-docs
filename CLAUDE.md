@@ -22,7 +22,8 @@ Learning: hybrid search, re-ranking, query rewriting, evals, tracing, agents.
 - TypeScript everywhere, ESM (`"type": "module"`), run scripts with `tsx`.
 - npm workspaces: `apps/*`, `packages/*`.
 - Postgres 16 + pgvector via `docker compose`; SQL with the `postgres` package (may move to Drizzle later).
-- LLM and embeddings via Vercel AI SDK (`ai`, `@ai-sdk/openai`). Embedding model: `text-embedding-3-small` (1536 dims).
+- LLM and embeddings via Vercel AI SDK (`ai`, `@ai-sdk/google`, `@ai-sdk/openai`).
+- Embeddings: provider chosen by `EMBEDDING_PROVIDER` in `packages/ingest/src/embeddings.ts`. Default Gemini `gemini-embedding-001` at 1536 dims (OpenAI `text-embedding-3-small` also 1536). Gemini needs taskType RETRIEVAL_DOCUMENT for chunks and RETRIEVAL_QUERY for questions. Never mix providers in one table.
 - Chunks table: see `db/schema.sql` (source, version, url, heading, content, tokens, embedding, tsv).
 
 ## Commands

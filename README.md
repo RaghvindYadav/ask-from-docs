@@ -59,7 +59,7 @@ Measured on 50 hand-written questions (`packages/evals/questions.json`): 15 simp
 | Layer | Choice |
 | --- | --- |
 | App | Next.js (App Router), Tailwind |
-| LLM + embeddings | Vercel AI SDK, `text-embedding-3-small` |
+| LLM + embeddings | Vercel AI SDK; Gemini `gemini-embedding-001` (1536 dims) or OpenAI `text-embedding-3-small` |
 | Database | Postgres 16 + pgvector (Docker locally, Neon in prod) |
 | Re-ranker | Cohere Rerank |
 | Tracing | Langfuse |
@@ -81,12 +81,12 @@ ask-the-docs/
 
 ## Getting started
 
-**Prerequisites:** Node 20+, Docker, an OpenAI API key.
+**Prerequisites:** Node 20+, Docker, a Gemini API key (free from Google AI Studio) or an OpenAI API key.
 
 ```bash
 # 1. Install
 npm install
-cp .env.example .env          # add your OPENAI_API_KEY
+cp .env.example .env          # add GOOGLE_GENERATIVE_AI_API_KEY (or set EMBEDDING_PROVIDER=openai)
 
 # 2. Start Postgres + create tables
 docker compose up -d
@@ -95,7 +95,7 @@ npm run db:init
 # 3. Download two versions of the Next.js docs
 npm run docs:fetch
 
-# 4. Chunk, embed and store
+# 4. Chunk, embed and store (tip: INGEST_LIMIT=20 npm run ingest for a quick test)
 npm run ingest
 
 # 5. Inspect the result
